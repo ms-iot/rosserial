@@ -34,6 +34,7 @@
 
 #ifndef ROSSERIAL_SERVER_SESSION_H
 #define ROSSERIAL_SERVER_SESSION_H
+
 #include <map>
 #include <boost/bind.hpp>
 #include <boost/asio.hpp>
