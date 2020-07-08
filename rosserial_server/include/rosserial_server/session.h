@@ -40,6 +40,13 @@
 #include <boost/asio.hpp>
 #include <boost/function.hpp>
 
+
+// Boost includes Windows.h which #defines ERROR, undefine it for Win32
+#ifdef WIN32
+#undef ERROR
+#endif 
+
+
 #include <ros/callback_queue.h>
 #include <ros/ros.h>
 #include <rosserial_msgs/TopicInfo.h>
