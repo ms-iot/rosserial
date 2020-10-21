@@ -462,10 +462,10 @@ class SerialClient(object):
             # an IOError if there's a serial problem or timeout. In that scenario, a single handler at the
             # bottom attempts to reconfigure the topics.
             try:
-                with self.read_lock:
-                    if self.port.inWaiting() < 1:
-                        time.sleep(0.001)
-                        continue
+                # with self.read_lock:
+                #    if self.port.inWaiting() < 1:
+                #        time.sleep(0.001)
+                #        continue
 
                 # Find sync flag.
                 flag = [0, 0]
@@ -531,7 +531,7 @@ class SerialClient(object):
                     except KeyError:
                         rospy.logerr("Tried to publish before configured, topic id %d" % topic_id)
                         self.requestTopics()
-                    time.sleep(0.001)
+                    # time.sleep(0.001)
                 else:
                     rospy.loginfo("wrong checksum for topic id and msg")
 
